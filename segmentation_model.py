@@ -212,10 +212,6 @@ def main():
     # Build segmentation dataset
     df_seg = df[ALL_FEATURES + ["income_over_50k"]].copy()
 
-    print(f"\nSegmentation dataset: {df_seg.shape[0]:,} rows x {len(ALL_FEATURES)} features")
-    print(f"Numeric features({len(NUMERIC_FEATURES)}): {NUMERIC_FEATURES}")
-    print(f"Categorical features({len(CATEGORICAL_FEATURES)}): {CATEGORICAL_FEATURES}")
-
     # Scale numeric features
     imputer = SimpleImputer(strategy="median")
     scaler = StandardScaler()
